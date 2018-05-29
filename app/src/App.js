@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import Map from './components/Map/';
-import ReactGoogleMaps from './components/DemoMap/';
+import ReactGoogleMaps from './components/Map/';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">DiGO</h1>
-          <ReactGoogleMaps />
         </header>
+        <ReactGoogleMaps />
       </div>
     );
   }

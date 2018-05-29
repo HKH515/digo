@@ -5,6 +5,7 @@ import MapIcon from '@material-ui/icons/Map';
 import EditIcon from '@material-ui/icons/Edit';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import { BottomNavigation, BottomNavigationAction, Card, CardContent } from '@material-ui/core';
+import PostSubmission from "../postSubmission";
 
 class NavigationWrapper extends React.Component {
 
@@ -29,7 +30,8 @@ class NavigationWrapper extends React.Component {
             viewToLoad = <p>placeholder for map</p>
         }
         else if (this.state.navState === 'text') {
-            viewToLoad = <p>placeholder for text marker entry</p>
+            viewToLoad = <PostSubmission/>;
+            //viewToLoad = <p>placeholder for text marker entry</p>
         }
         else if (this.state.navState === 'photo') {
             viewToLoad = <p>placeholder for photo marker entry</p>

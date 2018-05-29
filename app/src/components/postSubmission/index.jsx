@@ -72,11 +72,12 @@ class TextFields extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div style={{paddingTop: `40%`}}>
       <p style={{fontSize:14}}> Your current location: 
 
       Háskóli Reykjavíkur </p>
       <p style={{fontSize:10}}> Posting at: 64.123439, -21.927069 </p>
+      <p style={{height: '20px'}}></p>
       <form className={classes.container} noValidate autoComplete="off">
         <TextField 
           onChange={this.handleChange('content')}

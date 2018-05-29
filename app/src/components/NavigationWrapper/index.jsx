@@ -6,6 +6,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import { BottomNavigation, BottomNavigationAction, Card, CardContent } from '@material-ui/core';
 
+import MapView from '../Map';
+
 class NavigationWrapper extends React.Component {
 
     constructor(props) {
@@ -26,7 +28,13 @@ class NavigationWrapper extends React.Component {
     render() {
         var viewToLoad = null;
         if (this.state.navState === 'map') {
-            viewToLoad = <p>placeholder for map</p>
+            viewToLoad = 
+            <MapView
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+            />
         }
         else if (this.state.navState === 'text') {
             viewToLoad = <p>placeholder for text marker entry</p>

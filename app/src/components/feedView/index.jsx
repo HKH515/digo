@@ -20,6 +20,13 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import RoomIcon from '@material-ui/icons/Room';
 import {entries} from '../../services/markerService.js';
 import {ScrollBox, ScrollAxes, FastTrack} from 'react-scroll-box';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import SearchIcon from '@material-ui/icons/Search';
 
 const styles = theme => ({
   card: {
@@ -45,6 +52,9 @@ const styles = theme => ({
   avatar: {
     backgroundColor: red[500],
   },
+  margin: {
+    margin: theme.spacing.unit,
+  },
 });
 
 class RecipeReviewCard extends React.Component {
@@ -58,7 +68,18 @@ class RecipeReviewCard extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div style={{maxHeight: 800, overflowY: "auto"}}>
+       <div>
+       <div className={classes.margin} style={{backgroundColor: "#fff", width: `100%`, height: `130%`, padding: `6% 4%`, margin: `-5%`, zIndex: 42000}}>
+        <Grid container spacing={8} alignItems="flex-end">
+          <Grid item>
+            <SearchIcon />
+          </Grid>
+          <Grid item>
+            <TextField id="input-with-icon-grid" label="With a grid" />
+          </Grid>
+        </Grid>
+      </div>
+      <div style={{maxHeight: 800, overflowY: "scroll"}}>
        {entries.map((item)=>{return <p>
         <Card className={classes.card}>
           <CardHeader
@@ -141,6 +162,7 @@ class RecipeReviewCard extends React.Component {
           </Collapse>
         </Card> 
         </p>})}
+      </div>
       </div>
     );
   }

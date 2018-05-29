@@ -11,8 +11,6 @@ export var entries = [
     {
         "user": "Bjáni",
         "loc": "64.123741, -21.926178",
-        "post": "asfsdjghsdk!!!!"
-        "user": "B",
         "lat": 34.123742,
         "lng": -11.926178,
         "post": "asfsdjghsdk!!!!",

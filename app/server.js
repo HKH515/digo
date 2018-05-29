@@ -1,5 +1,6 @@
 const https = require("https");
 const fs = require("fs");
+const path = require("path");
 const express = require("express");
 const app = express();
 
@@ -7,6 +8,8 @@ const options = {
     cert: fs.readFileSync("/etc/letsencrypt/live/linuxswag.com/fullchain.pem"),
     key: fs.readFileSync("/etc/letsencrypt/live/linuxswag.com/privkey.pem")
 };
+
+app.use('/', express.static(path.join(__dirname, 'build')));
 
 app.get('/', (req, res) => res.send("Mofo what you doing on my turf, this is my corner homie"));
 

@@ -5,7 +5,7 @@ export var entries = [
         "post": "asfsdjghsdk"
     },
     {
-        "user": "B",
+        "user": "Bjáni",
         "loc": "64.123741, -21.926178",
         "post": "asfsdjghsdk!!!!"
     },

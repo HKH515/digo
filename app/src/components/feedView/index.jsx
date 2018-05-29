@@ -15,7 +15,11 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CommentIcon from '@material-ui/icons/Comment';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import RoomIcon from '@material-ui/icons/Room';
+import {entries} from '../../services/markerService.js';
+import {ScrollBox, ScrollAxes, FastTrack} from 'react-scroll-box';
 
 const styles = theme => ({
   card: {
@@ -49,36 +53,37 @@ class RecipeReviewCard extends React.Component {
   handleExpandClick = () => {
     this.setState({ expanded: !this.state.expanded });
   };
-
+  
   render() {
     const { classes } = this.props;
 
     return (
-      <div>
+      <div style={{maxHeight: 800, overflowY: "auto"}}>
+       {entries.map((item)=>{return <p>
         <Card className={classes.card}>
           <CardHeader
             avatar={
               <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
-              </Avatar>
+                    {item.user[0]};        
+
+           </Avatar>
             }
             action={
               <IconButton>
                 <MoreVertIcon />
               </IconButton>
             }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
+            title={item.user}
+            subheader= {item.loc}
           />
           <CardMedia
-            className={classes.media}
-            image="/static/images/cards/paella.jpg"
+            //className={classes.media}
+            //image="/static/images/cards/paella.jpg"
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography component="p">
-              This impressive paella is a perfect party dish and a fun meal to cook together with
-              your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            {item.post}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
@@ -87,6 +92,12 @@ class RecipeReviewCard extends React.Component {
             </IconButton>
             <IconButton aria-label="Share">
               <ShareIcon />
+            </IconButton>
+            <IconButton aria-label="Comment">
+              <CommentIcon />
+            </IconButton>
+            <IconButton aria-label="Location">
+                <RoomIcon />
             </IconButton>
             <IconButton
               className={classnames(classes.expand, {
@@ -128,7 +139,8 @@ class RecipeReviewCard extends React.Component {
               </Typography>
             </CardContent>
           </Collapse>
-        </Card>
+        </Card> 
+        </p>})}
       </div>
     );
   }

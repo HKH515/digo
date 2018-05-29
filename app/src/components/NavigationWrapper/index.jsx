@@ -41,7 +41,6 @@ class NavigationWrapper extends React.Component {
         }
         else if (this.state.navState === 'text') {
             viewToLoad = <PostSubmission/>;
-            //viewToLoad = <p>placeholder for text marker entry</p>
         }
         else if (this.state.navState === 'photo') {
             viewToLoad = <p>placeholder for photo marker entry</p>

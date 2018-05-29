@@ -3,8 +3,8 @@ import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
 class Map extends Component {
 
-   render() {
-   
+   render() { return 0;
+   /*
    const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultCenter = { { lat: 40.756795, lng: -73.954298 } }
@@ -21,7 +21,7 @@ class Map extends Component {
         />
       </div>
    );
-
+*/
    }
 };
 

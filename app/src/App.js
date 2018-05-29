@@ -4,6 +4,7 @@ import Map from './components/Map/';
 import { getEntries } from './services/markerService';
 
 import NavigationWrapper from './components/NavigationWrapper';
+import PostSubmission from './components/postSubmission';
 
 class App extends React.Component {
 

@@ -9,7 +9,8 @@ export var entries = [
         "timestamp": 1527633055692
     },
     {
-        "user": "B",
+        "user": "Bjáni",
+        "loc": "64.123741, -21.926178",
         "lat": 34.123742,
         "lng": -11.926178,
         "post": "asfsdjghsdk!!!!",

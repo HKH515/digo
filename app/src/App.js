@@ -3,6 +3,8 @@ import React from 'react';
 import Map from './components/Map/';
 import { getEntries } from './services/markerService';
 
+import NavigationWrapper from './components/NavigationWrapper';
+
 class App extends React.Component {
 
   render() {
@@ -14,6 +16,8 @@ class App extends React.Component {
           <h1 className="App-title">DiGO</h1>
         </header>
         <Map />
+        <NavigationWrapper>
+        </NavigationWrapper>
       </div>
     );
   }

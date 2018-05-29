@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import withScriptJs from 'react-google-maps/lib/withScriptjs';
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
-class Map extends Component {
 
-   render() { return 0;
-   /*
-   const GoogleMapExample = withGoogleMap(props => (
-      <GoogleMap
-        defaultCenter = { { lat: 40.756795, lng: -73.954298 } }
-        defaultZoom = { 13 }
-      >
-      </GoogleMap>
-   ));
+const MapView = withScriptJs(withGoogleMap(props =>
+  <GoogleMap
+    defaultZoom={8}
+    defaultCenter={{ lat: -34.397, lng: 150.644 }}
+  >
+    <Marker
+      position={{ lat: -34.397, lng: 150.644 }}
+    />
+  </GoogleMap>
+));
 
-   return(
-      <div>
-        <GoogleMapExample
-          containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
-        />
-      </div>
-   );
-*/
+export default MapView;
+
+/*class Map extends Component {
+   render() {
+      return (
+        <div>
+          <MapView
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
+        </div>
+      );
    }
 };
 
 export default Map;
+*/

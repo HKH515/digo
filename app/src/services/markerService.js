@@ -40,6 +40,6 @@ export function addEntry(user, lat, lng, post) {
         "post": post,
         "timestamp": Date.now()
     }
-    entries.push(newInput);
+    entries.unshift(newInput);
     console.log(newInput);
 }

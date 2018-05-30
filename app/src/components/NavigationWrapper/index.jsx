@@ -8,7 +8,6 @@ import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import { BottomNavigation, BottomNavigationAction, Card, CardContent } from '@material-ui/core';
 import PostSubmission from "../postSubmission";
 import FeedView from "../feedView";
-
 import MapView from '../Map';
 
 class NavigationWrapper extends React.Component {
@@ -18,7 +17,7 @@ class NavigationWrapper extends React.Component {
         this.state = {
             navState: 'map'
         }
-        
+            
         // This is done such that the render function can see the function
         this.navigate = this.navigate.bind(this);
     }
@@ -58,7 +57,8 @@ class NavigationWrapper extends React.Component {
                 <BottomNavigation value={this.state.navState} style={{backgroundColor: '#55DD88'}} onChange={this.navigate} showLabels>
                     <BottomNavigationAction value="text" icon={<EditIcon />}/>
                     /*<BottomNavigationAction value="photo"  icon={<PhotoCameraIcon />}/>*/
-                    <BottomNavigationAction value="map" icon={<MapIcon />}/>
+                    <BottomNavigationAction value="map" icon={<MapIcon/>}/>
+
                     <BottomNavigationAction value="feed" icon={<ListIcon />}/>
                 </BottomNavigation>
             </Paper>

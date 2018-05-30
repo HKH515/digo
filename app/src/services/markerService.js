@@ -9,6 +9,65 @@ export var entries = [
         "timestamp": 1527633055692
     },
     {
+        "user": "Jane",
+        "lat": 64.123876,
+        "lng": -21.927255,
+        "post": "I forgot my mac charger at the financial exam 
+yesterday in classroom M101, if someone’s seen it please let me know ",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": 1527633054692
+    },
+    {
+        "user": "Maria",
+        "lat": 64.124276,
+        "lng": -21.924755,
+        "post": "Could anyone share with me the examples from 
+MicroEconomics II?",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": 1527633054692
+    },  
+    {
+        "user": "John",
+        "lat": 64.126426,
+        "lng": -21.922155,
+        "post": "Anyone's not found a partner to write with and wants 
+to write about marketing?",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": 1527633024692
+    },   
+    {
+        "user": "Daniel",
+        "lat": 64.123276,
+        "lng": -21.924755,
+        "post": "",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": 1527633054692
+    },   
+    {
+        "user": "Mathieu",
+        "lat": 64.122276,
+        "lng": -21.925755,
+        "post": "We're playing FIFA in the lounge if anyone wants to 
+join us",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": 1527633054292
+    },   
+    {
+        "user": "Jesus",
+        "lat": 64.123276,
+        "lng": -21.927755,
+        "post": "Hello I am freeing the peoples of the world, anyone 
+want to join me?",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": 1527633054692
+    },
+    {
         "user": "Anonymous",
         "lat": 64.123757,
         "lng": -21.924992,

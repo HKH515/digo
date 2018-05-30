@@ -114,7 +114,6 @@ class TextFields extends React.Component {
       });
     }, 2e3);
         addEntry("Me", "64.125842", "-21.924043", this.state.content);
-        // change to feedview
       };
   render() {
     const { classes } = this.props;

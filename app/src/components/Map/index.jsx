@@ -5,25 +5,6 @@ import CustomMarker from '../CustomMarker';
 import { getEntries } from '../../services/markerService';
 import { compose, withProps, withStateHandlers } from "recompose";
 
-function aggregateMarkers() {
-  var markerObjects = [];
-  var markers = getEntries();
-  for (var key in markers) {
-    markerObjects.push(<CustomMarker key={key}
-                               user={markers[key].user}
-                               photoMarker={markers[key].photoMarker}
-                               lat={markers[key].lat}
-                               lng={markers[key].lng}
-                               post={markers[key].post}
-                               position={{lat: markers[key].lat, lng: markers[key].lng}}/>);
-  }
-
-  console.log(markerObjects);
-  return markerObjects;
-
-}
-
-
 const MapView = compose(
   withStateHandlers(() => ({
     isOpen: true,
@@ -36,9 +17,9 @@ const MapView = compose(
   withGoogleMap
 )(props =>
   <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
-  >
+    defaultZoom={19}
+    defaultCenter={{ lat: 64.123676, lng: -21.926255 }}
+   >
   {getEntries().map((marker) => 
   
     <Marker

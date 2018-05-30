@@ -12,7 +12,7 @@ import MapView from '../Map';
 class CustomMarker extends React.Component {
     render() {
         var commonElement =
-                        <CardContent>
+                        <CardContent style={{maxWidth: 200, padding: 2}}>
                                 <Typography variant="headline">
                                     {this.props.user}
                                 </Typography>

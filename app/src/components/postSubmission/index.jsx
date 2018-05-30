@@ -13,6 +13,8 @@ import {addEntry} from '../../services/markerService';
 import Paper from '@material-ui/core/Paper';
 import Slider from '@material-ui/lab/Slider';
 import Typography from '@material-ui/core/Typography';
+import Fade from '@material-ui/core/Fade';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const styles = theme => ({
   container: {
@@ -42,6 +44,14 @@ const styles = theme => ({
   textBox: {
     fontSize: 10,
   },
+  placeholder: {
+    height: 40,
+  },
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 });
 
 
@@ -55,11 +65,23 @@ class TextFields extends React.Component {
         open: false,
         range: 5,
         time: 3,
+        loading: false,
+        query: 'idle',
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleClickOpen = this.handleClickOpen.bind(this);
 
+  }componentWillUnmount() {
+    clearTimeout(this.timer);
   }
+  timer = null;
+  handleClickLoading = () => {
+    this.setState({
+      loading: !this.state.loading,
+    });
+  };
+
+   
       handleChange = content => event => {
         this.setState({
           [content]: event.target.value,
@@ -74,12 +96,29 @@ class TextFields extends React.Component {
         this.setState({
             open: true,
         });
-        
+         clearTimeout(this.timer);
+
+    if (this.state.query !== 'idle') {
+      this.setState({
+        query: 'idle',
+      });
+      return;
+    }
+
+    this.setState({
+      query: 'progress',
+    });
+    this.timer = setTimeout(() => {
+      this.setState({
+        query: 'success',
+      });
+    }, 2e3);
         addEntry("Me", "64.125842", "-21.924043", this.state.content);
+        // change to feedview
       };
   render() {
     const { classes } = this.props;
-    const { value } = this.state;
+    const { value, loading, query } = this.state;
     return (
       <div style={{paddingTop: `5%`}}>
       <Paper style={{padding: `5%`}}> 
@@ -126,7 +165,21 @@ class TextFields extends React.Component {
        <Button className={classes.button} variant="raised" size="small" onClick={this.handleClickOpen}>
         <Save className={classNames(classes.leftIcon, classes.iconSmall)} />
         Send
-      </Button>
+      </Button><div className={classes.placeholder}>
+          {query === 'success' ? (
+            <Typography>Success!</Typography>
+          ) : (
+            <Fade
+              in={query === 'progress'}
+              style={{
+                transitionDelay: query === 'progress' ? '800ms' : '0ms',
+              }}
+              unmountOnExit
+            >
+              <CircularProgress />
+            </Fade>
+          )}
+        </div>
       </Paper>
       </div>
 

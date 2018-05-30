@@ -27,6 +27,8 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
+import Image from 'material-ui-image';
 
 const styles = theme => ({
   card: {
@@ -59,8 +61,8 @@ const styles = theme => ({
 
 class RecipeReviewCard extends React.Component {
   state = { 
-        //expanded: false 
-        expanded: Array(entries.length).fill(false)
+        expanded: false 
+        //expanded: Array(entries.length).fill(false)
   };
 
   handleExpandClick = () => {
@@ -72,7 +74,7 @@ class RecipeReviewCard extends React.Component {
 
     return (
        <div>
-       <div className={classes.margin} style={{backgroundColor: "#fff", width: `100%`, height: `130%`, padding: `6% 4%`, margin: `-5%`, zIndex: 42000}}>
+       <div className={classes.margin} style={{backgroundColor: "#fff", width: `100%`, height: `140%`, padding: `8% 5%`, margin: `-5%`, zIndex: 42000}}>
         <Grid container spacing={8} alignItems="flex-end">
           <Grid item>
             <SearchIcon />
@@ -83,7 +85,38 @@ class RecipeReviewCard extends React.Component {
         </Grid>
       </div>
       <div style={{maxHeight: 680, overflowY: "scroll"}}>
-       {entries.map((item)=>{return <p>
+       
+      
+      <Card className={classes.card} >
+        <Button size="small" color="primary">
+          PLACES NEAR YOU      
+        </Button>
+
+        <CardMedia
+          className={classes.media}
+          image={require("./hr.jpg")}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+       
+          <Typography gutterBottom variant="headline" component="h2">
+            Háskólinn í Reykjavík
+          </Typography>
+          <Typography component="p">Reykjavík University (RU; Icelandic: Háskólinn í Reykjavík), is the largest private university in Iceland with more than 3,500 students. It is chartered by the Chamber of  ... 
+          </Typography>
+        </CardContent>
+        <CardActions>
+        <Button size="small" color="primary">
+            USER FEED
+          </Button>
+          <Button size="small" color="primary">
+            LOCATION FEED
+          </Button>
+         
+        </CardActions>
+      </Card>
+      
+      {entries.map((item)=>{return <p>
         <Card className={classes.card}>
           <CardHeader
             avatar={
@@ -98,7 +131,7 @@ class RecipeReviewCard extends React.Component {
               </IconButton>
             }
             title={item.user}
-            subheader= {item.loc}
+            subheader= {item.timestamp}
           />
           <CardMedia
             //className={classes.media}

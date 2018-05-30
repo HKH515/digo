@@ -6,7 +6,7 @@ export var entries = [
         "post": "Kemur einhver í ping pong!?",
         "photoMarker": false,
         "photo": null,
-        "timestamp": 1527633055692
+        "timestamp": "5/30/2018, 10:20:54 AM"
     },
     {
         "user": "Anonymous",
@@ -15,7 +15,7 @@ export var entries = [
         "post": "Það er verið að gefa pizzur í sólinni!!!!",
         "photoMarker": false,
         "photo": null,
-        "timestamp": 1527633055692
+        "timestamp": "5/30/2018, 12:29:24 AM"
     },
     {
         "user": "Guðmundur",
@@ -24,7 +24,7 @@ export var entries = [
         "post": "Hver kemur í sjósund?",
         "photoMarker": true,
         "photo": "http://handpickediceland.is/wp-content/uploads/2015/03/30-Ylstr%C3%B6ndin-Nauth%C3%B3lsv%C3%ADk.jpg",
-        "timestamp": 1527633055692
+        "timestamp": "5/29/2018, 21:20:36 AM"
     },
 ]
 
@@ -33,12 +33,13 @@ export function getEntries() {
 }
 
 export function addEntry(user, lat, lng, post) {
+    var now = new Date();
     var newInput = {
         "user": user,
         "lat": lat,
         "lng": lng,
         "post": post,
-        "timestamp": Date.now()
+        "timestamp": now.toLocaleString(),
     }
     entries.unshift(newInput);
     console.log(newInput);

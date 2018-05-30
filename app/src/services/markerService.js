@@ -21,8 +21,7 @@ export var entries = [
         "user": "Maria",
         "lat": 64.124276,
         "lng": -21.924755,
-        "post": "Could anyone share with me the examples from 
-MicroEconomics II?",
+        "post": "Could anyone share with me the examples from MicroEconomics II?",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633054692
@@ -31,8 +30,7 @@ MicroEconomics II?",
         "user": "John",
         "lat": 64.126426,
         "lng": -21.922155,
-        "post": "Anyone's not found a partner to write with and wants 
-to write about marketing?",
+        "post": "Anyone's not found a partner to write with and wants to write about marketing?",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633024692
@@ -50,8 +48,7 @@ to write about marketing?",
         "user": "Mathieu",
         "lat": 64.122276,
         "lng": -21.925755,
-        "post": "We're playing FIFA in the lounge if anyone wants to 
-join us",
+        "post": "We're playing FIFA in the lounge if anyone wants to join us",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633054292
@@ -60,8 +57,7 @@ join us",
         "user": "Jesus",
         "lat": 64.123276,
         "lng": -21.927755,
-        "post": "Hello I am freeing the peoples of the world, anyone 
-want to join me?",
+        "post": "Hello I am freeing the peoples of the world, anyone want to join me?",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633054692

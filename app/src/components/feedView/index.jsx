@@ -58,17 +58,55 @@ const styles = theme => ({
     margin: theme.spacing.unit,
   },
 });
-
+const hr = [ 
+    {
+        "user": "Háskólinn í Reykjavík",
+        "lat": 64.123676,
+        "lng": -21.926255,
+        "post": "Háskólagrunnur HR er góður undirbúningur fyrir þá sem vilja hefja háskólanám en hafa ekki lokið stúdentsprófi. Einnig geta þeir sem hafa lokið stúdentsprófi bætt við sig einingum í stærðfræði og raungreinum í viðbótarnámi við stúdentspróf. Verið velkomin á kynningarfund í dag, fimmtudag, kl. 17:30.",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": "5/30/2018, 10:20:54 AM"
+    },
+    {
+        "user": "Háskólinn í Reykjavík",
+        "lat": 64.123676,
+        "lng": -21.926255,
+        "post": "• Langar þig að vinna að rannsóknum með fyrirtæki? • Jóhanna Vigdís Guðmundsdóttir, fram­kvæmda­stjóri tengsla hjá HR segir hérna frá styrktum rannsóknarverkefnum nemenda. Á morgun, þriðjudaginn 8. maí kl. 12 í stofu V102, verður haldin kynning á rannsóknum sem meistara- og doktorsnemar geta unnið í samstarfi við fyrirtæki. Við hvetjum alla til að koma og kynna sér möguleikana.",
+        "photoMarker": false,
+        "photo": null,
+        "timestamp": "5/21/2018, 14:20:57 AM"
+    },
+];
 class RecipeReviewCard extends React.Component {
   state = { 
-        expanded: false 
+        expanded: false, 
         //expanded: Array(entries.length).fill(false)
+        sources: entries,
+        userColor: "secondary",
+        locationColor: "primary",
   };
 
   handleExpandClick = () => {
     this.setState({ expanded: !this.state.expanded });
   };
   
+  handleOnClickLocation = () => {
+      this.setState({ sources: hr });
+      this.setState({
+        userColor: "primary",
+        locationColor: "secondary",
+      });
+  }
+
+  handleOnClickUser = () => {
+      this.setState({ sources: entries });
+      this.setState({
+        userColor: "secondary",
+        locationColor: "primary",
+      });
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -106,17 +144,16 @@ class RecipeReviewCard extends React.Component {
           </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" color={this.state.userColor} onClick={this.handleOnClickUser}>
             USER FEED
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" color={this.state.locationColor} onClick={this.handleOnClickLocation}>
             LOCATION FEED
           </Button>
          
         </CardActions>
       </Card>
-      
-      {entries.map((item)=>{return <p>
+      {this.state.sources.map((item)=>{return <p>
         <Card className={classes.card}>
           <CardHeader
             avatar={

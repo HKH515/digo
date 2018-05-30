@@ -42,7 +42,7 @@ class NavigationWrapper extends React.Component {
             viewToLoad = <PostSubmission/>;
         }
         else if (this.state.navState === 'photo') {
-            viewToLoad = <p>placeholder for photo marker entry</p>
+            viewToLoad = <p style={{padding: `50% 8%`, fontSize: 20}}> The camera feature is not yet available on your browser.</p>
         }
         else if (this.state.navState === 'feed') {
             viewToLoad = <FeedView />;

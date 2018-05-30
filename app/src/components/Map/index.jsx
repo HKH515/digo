@@ -45,13 +45,14 @@ const MapView = compose(
       key={marker.post}
       position={{ lat: marker.lat, lng: marker.lng }}
       onClick={props.onToggleOpen}
-      label={marker.user[0]}
+      label={marker.user[0].toUpperCase()}
     >
       {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
       <CustomMarker
                             user={marker.user}
                             post={marker.post}
                             photoMarker={marker.photoMarker}
+                            photo={marker.photo}
                             key={marker.post}
                           />
       </InfoWindow>

@@ -26,6 +26,15 @@ export var entries = [
         "photo": "http://handpickediceland.is/wp-content/uploads/2015/03/30-Ylstr%C3%B6ndin-Nauth%C3%B3lsv%C3%ADk.jpg",
         "timestamp": "5/29/2018, 21:20:36 AM"
     },
+    {
+        "user": "Anonymous",
+        "lat": 64.15,
+        "lng": -21.26178,
+        "post": "Is anyone selling a copy of this book? or perhaps the 3rd edition?",
+        "photoMarker": true,
+        "photo": "https://i.pinimg.com/originals/b0/e1/8e/b0e18ee399cc53231653727dc63e94ea.jpg",
+        "timestamp": 1527633055692
+    }
 ]
 
 export function getEntries() {

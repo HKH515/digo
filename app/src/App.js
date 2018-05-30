@@ -19,9 +19,9 @@ class App extends React.Component {
       console.log(entries);
     return (
       <div className="App">
-        <AppBar position="static" style={{marginLeft: '36.5%', width: '25.6%'}}>
+        <AppBar position="static" color="#55DD88" style={{width: '750'}}>
           <Toolbar>
-            <Typography variant="title" color="inherit">DiGO</Typography>
+            <Typography variant="title" color="inherit" align="center">DiGO</Typography>
           </Toolbar>
         </AppBar>
         <header className="App-header">

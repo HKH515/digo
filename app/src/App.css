@@ -1,11 +1,15 @@
 html, body{
   background: url(/icelandic-times.jpg) no-repeat center center fixed; 
   background-size: cover;
+}
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
-  margin: 0;
 }
 
 .App-header {

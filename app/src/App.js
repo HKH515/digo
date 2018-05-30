@@ -21,7 +21,7 @@ class App extends React.Component {
       <div className="App">
         <AppBar position="static" color="#55DD88" style={{width: '750'}}>
           <Toolbar>
-            <Typography variant="title" color="inherit" align="center">DiGO</Typography>
+            <Typography variant="title" color="inherit" align="center" style={{paddingLeft: '45%'}}>DiGO</Typography>
           </Toolbar>
         </AppBar>
         <header className="App-header">

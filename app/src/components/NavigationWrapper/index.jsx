@@ -48,7 +48,7 @@ class NavigationWrapper extends React.Component {
             viewToLoad = <FeedView />;
         }
         return (
-            <Paper style={{width: 500}}>
+            <Paper style={{width: 500, margin: '0 auto'}}>
                 <Card style={{height: 750, backgroundColor: '#FFFFFF'}}>
                     <CardContent>
                         {viewToLoad}

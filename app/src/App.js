@@ -6,6 +6,9 @@ import { getEntries } from './services/markerService';
 import NavigationWrapper from './components/NavigationWrapper';
 import PostSubmission from './components/postSubmission';
 
+import './normalize.css';
+import './App.css';
+
 class App extends React.Component {
 
   render() {

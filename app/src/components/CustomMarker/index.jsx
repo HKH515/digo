@@ -19,22 +19,22 @@ class CustomMarker extends React.Component {
                                     {this.props.post}
                                 </Typography>
                         </CardContent>
-        /*if (this.props.photoMarker) {
+        if (this.props.photoMarker) {
             return (
                 <Card>
                     <CardMedia image={this.props.photo}/>
                     {commonElement}
                 </Card>
             );
-        }*/
-        //else {
+        }
+        else {
             return (
                 <Card>
                     <CardMedia image={this.props.photo}/>
                     {commonElement}
                 </Card>
             );
-        //}
+        }
     }
 }
 

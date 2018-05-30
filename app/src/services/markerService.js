@@ -1,30 +1,29 @@
 export var entries = [
     {
-        "user": "A",
-        "lat": 54.123742,
-        "lng": -21.926178,
-        "post": "asfsdjghsdk",
+        "user": "Doddi A.",
+        "lat": 64.123676,
+        "lng": -21.926255,
+        "post": "Kemur einhver í ping pong!?",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633055692
     },
     {
-        "user": "Bjáni",
-        "loc": "64.123741, -21.926178",
-        "lat": 34.123742,
-        "lng": -11.926178,
-        "post": "asfsdjghsdk!!!!",
+        "user": "Anonymous",
+        "lat": 64.123757,
+        "lng": -21.924992,
+        "post": "Það er verið að gefa pizzur í sólinni!!!!",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633055692
     },
     {
-        "user": "C",
+        "user": "Guðmundur",
         "lat": 64.13,
         "lng": -21.16178,
-        "post": "asfsdjgsdfsdfhsdk",
-        "photoMarker": false,
-        "photo": null,
+        "post": "Hver kemur í sjósund?",
+        "photoMarker": true,
+        "photo": "http://handpickediceland.is/wp-content/uploads/2015/03/30-Ylstr%C3%B6ndin-Nauth%C3%B3lsv%C3%ADk.jpg",
         "timestamp": 1527633055692
     },
 ]

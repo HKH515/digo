@@ -30,10 +30,10 @@ function aggregateMarkers() {
 
 const MapView = compose(
   withStateHandlers(() => ({
-    isOpen: false,
+    isOpen: true,
   }), {
     onToggleOpen: ({ isOpen }) => () => ({
-      isOpen: !isOpen,
+      isOpen: isOpen,
     })
   }),
   withScriptJs,
@@ -46,6 +46,7 @@ const MapView = compose(
   {getEntries().map((marker) => 
   
     <Marker
+      key={marker.post}
       position={{ lat: marker.lat, lng: marker.lng }}
       onClick={props.onToggleOpen}
     >
@@ -53,7 +54,7 @@ const MapView = compose(
       <CustomMarker
                             user={marker.user}
                             post={marker.post}
-                            photoMarker={false}
+                            photoMarker={marker.photoMarker}
                             key={marker.post}
                           />
       </InfoWindow>

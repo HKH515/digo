@@ -6,6 +6,9 @@ import { getEntries } from './services/markerService';
 import NavigationWrapper from './components/NavigationWrapper';
 import PostSubmission from './components/postSubmission';
 
+import './normalize.css';
+import './App.css';
+
 class App extends React.Component {
 
   render() {
@@ -15,7 +18,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">DiGO</h1>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo"></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZF3dwqCagP16AnMNr15cshITKeOvKVUQ" async defer></script>
         </header>
         <NavigationWrapper>
         </NavigationWrapper>

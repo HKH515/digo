@@ -9,9 +9,9 @@ const options = {
     key: fs.readFileSync("/etc/letsencrypt/live/linuxswag.com/privkey.pem")
 };
 
-app.use('/', express.static(path.join(__dirname, 'build')));
+app.use('/', express.static('build'));
 
-app.get('/', (req, res) => res.send("Mofo what you doing on my turf, this is my corner homie"));
+// app.get('/', (req, res) => res.send("Mofo what you doing on my turf, this is my corner homie"));
 
 https.createServer(options, app).listen(443);
 

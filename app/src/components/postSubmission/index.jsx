@@ -10,6 +10,9 @@ import KeyboardVoice from '@material-ui/icons/KeyboardVoice';
 import Icon from '@material-ui/core/Icon';
 import Save from '@material-ui/icons/Save';
 import {addEntry} from '../../services/markerService';
+import Paper from '@material-ui/core/Paper';
+import Slider from '@material-ui/lab/Slider';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   container: {
@@ -50,6 +53,8 @@ class TextFields extends React.Component {
         age: '',
         multiline: 'Controlled',
         open: false,
+        range: 5,
+        time: 3,
       };
       this.handleChange = this.handleChange.bind(this);
       this.handleClickOpen = this.handleClickOpen.bind(this);
@@ -60,7 +65,11 @@ class TextFields extends React.Component {
           [content]: event.target.value,
         });
       };
+
+      handleSlideRange = (event, value) => this.setState({ range: value });
      
+      handleSlideTime = (event, value) => this.setState({ time: value });
+      
       handleClickOpen = () => {
         this.setState({
             open: true,
@@ -70,14 +79,27 @@ class TextFields extends React.Component {
       };
   render() {
     const { classes } = this.props;
-
+    const { value } = this.state;
     return (
-      <div style={{paddingTop: `40%`}}>
-      <p style={{fontSize:14}}> Your current location: 
+      <div style={{paddingTop: `5%`}}>
+      <Paper style={{padding: `5%`}}> 
+      <Typography style={{fontSize:18}}> Your current location: 
 
-      Háskóli Reykjavíkur </p>
-      <p style={{fontSize:10}}> Posting at: 64.123439, -21.927069 </p>
-      <p style={{height: '20px'}}></p>
+      Háskóli Reykjavíkur </Typography>
+      <Typography style={{fontSize:14}}> Posting at: 64.123439, -21.927069 </Typography>
+      <p style={{height: '15px'}}></p>
+      <div className={classes.container}>
+        <Typography> Range: </Typography>
+        <Slider value={this.state.range} min={0.1} max={100} step={1} onChange={this.handleSlideRange} />
+        <Typography>{this.state.range} km </Typography>
+      </div>
+      <div>
+        <p style={{height: '15px'}}></p>
+        <Typography> Time: </Typography>
+        <Slider value={this.state.time} min={1} max={15} step={1} onChange={this.handleSlideTime} />
+        <Typography>{this.state.time} days </Typography>
+      </div>
+      <p style={{height: '15px'}}></p>
       <form className={classes.container} noValidate autoComplete="off">
         <TextField 
           onChange={this.handleChange('content')}
@@ -92,11 +114,20 @@ class TextFields extends React.Component {
           fullWidth
           margin="normal"
         />
+        <div style={{height: `50%`}}> </div>
+        <TextField
+          id="helperText"
+          placeholder="//cats, //soccer, //.."
+          helperText="Add your dashtags here!"
+          fullWidth
+          margin="normal"
+        />
       </form>
        <Button className={classes.button} variant="raised" size="small" onClick={this.handleClickOpen}>
         <Save className={classNames(classes.leftIcon, classes.iconSmall)} />
         Send
       </Button>
+      </Paper>
       </div>
 
     );

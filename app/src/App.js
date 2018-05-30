@@ -6,8 +6,11 @@ import { getEntries } from './services/markerService';
 import NavigationWrapper from './components/NavigationWrapper';
 import PostSubmission from './components/postSubmission';
 
+import AppBar from '@material-ui/core/AppBar';
+
 import './normalize.css';
 import './App.css';
+import { Toolbar, Typography } from '@material-ui/core';
 
 class App extends React.Component {
 
@@ -16,8 +19,12 @@ class App extends React.Component {
       console.log(entries);
     return (
       <div className="App">
+        <AppBar position="static" style={{marginLeft: '36.5%', width: '25.6%'}}>
+          <Toolbar>
+            <Typography variant="title" color="inherit">DiGO</Typography>
+          </Toolbar>
+        </AppBar>
         <header className="App-header">
-          <h1 className="App-title">DiGO</h1>
           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZF3dwqCagP16AnMNr15cshITKeOvKVUQ" async defer></script>
         </header>
         <NavigationWrapper>

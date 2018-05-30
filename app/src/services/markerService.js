@@ -12,8 +12,7 @@ export var entries = [
         "user": "Jane",
         "lat": 64.123876,
         "lng": -21.927255,
-        "post": "I forgot my mac charger at the financial exam 
-yesterday in classroom M101, if someone’s seen it please let me know ",
+        "post": "I forgot my mac charger at the financial exam yesterday in classroom M101, if someone’s seen it please let me know ",
         "photoMarker": false,
         "photo": null,
         "timestamp": 1527633054692

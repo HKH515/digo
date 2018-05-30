@@ -5,6 +5,7 @@ import MapIcon from '@material-ui/icons/Map';
 import EditIcon from '@material-ui/icons/Edit';
 import PhotoCameraIcon from '@material-ui/icons/PhotoCamera';
 import { BottomNavigation, BottomNavigationAction, Card, CardContent, CardMedia, Typography } from '@material-ui/core';
+import Image from 'material-ui-image'; 
 
 import MapView from '../Map';
 
@@ -21,16 +22,15 @@ class CustomMarker extends React.Component {
                         </CardContent>
         if (this.props.photoMarker) {
             return (
-                <Card>
-                    <CardMedia image={this.props.photo}/>
+                <Card style={{height: 300, width: 200}}>
                     {commonElement}
+                        <Image src={this.props.photo} imageStyle={{padding: '0%', maxWidth: '80%', maxHeight: '80%'}}/>
                 </Card>
             );
         }
         else {
             return (
                 <Card>
-                    <CardMedia image={this.props.photo}/>
                     {commonElement}
                 </Card>
             );

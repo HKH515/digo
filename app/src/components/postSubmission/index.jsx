@@ -75,7 +75,7 @@ class TextFields extends React.Component {
             open: true,
         });
         
-        addEntry("Me", "64.125842", "-21.924043", this.state.content);
+        addEntry("Me", 64.125842, -21.924043, this.state.content);
       };
   render() {
     const { classes } = this.props;

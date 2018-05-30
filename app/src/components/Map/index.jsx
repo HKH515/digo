@@ -5,10 +5,6 @@ import CustomMarker from '../CustomMarker';
 import { getEntries } from '../../services/markerService';
 import { compose, withProps, withStateHandlers } from "recompose";
 
-
-var a = getEntries().map((marker) => <Marker position={{lat: marker.lat, lng: marker.lng}} />)
-console.log(a);
-
 function aggregateMarkers() {
   var markerObjects = [];
   var markers = getEntries();
@@ -49,6 +45,7 @@ const MapView = compose(
       key={marker.post}
       position={{ lat: marker.lat, lng: marker.lng }}
       onClick={props.onToggleOpen}
+      label={marker.user[0]}
     >
       {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
       <CustomMarker

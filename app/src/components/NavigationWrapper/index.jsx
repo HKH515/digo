@@ -32,7 +32,7 @@ class NavigationWrapper extends React.Component {
         if (this.state.navState === 'map') {
             viewToLoad = 
             <MapView
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZF3dwqCagP16AnMNr15cshITKeOvKVUQ&v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `750px` }} />}
                 mapElement={<div style={{ height: `101%`, width: `111%`, margin: `-5%`}} />}
